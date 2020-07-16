@@ -117,22 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="toolStripSplitButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAPCAYAAADtc08vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEGSURBVDhPjZI9a8JQFIbvn+kgLsrd+gc6+i8EV0XaX+Dc
-        Me4uDYLg5Gyhk5OUQIZAJBBQiEIJpESTo+9pT4wfbe6Fh3O/njf3QBQZjuZThwQotcYjm8rEh1geWBcB
-        WZYRWAz1BbKPyzJHhShgrdI0ZTHP8wsWliacVaEgH3Yfd0HINW/PmpIkKeCAfTQ2BgFxHBdwwPfqlbn3
-        xX/3Ti4HxJ99Bpfz5N0YuBywnbdY3kd2CbRVXt/OZ4PfgPXkgQOkFZMKOQzDnxdAljZQv5a9P9dyZr9o
-        CoLgHIA2TIHs+z5TvABtgM20Xsmoq8nzPEa5rst/ogRUVautCY6gHMchgAMT5L7UI0G4+3ghQi4AAAAA
-        AElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>40</value>
-  </metadata>
 </root>

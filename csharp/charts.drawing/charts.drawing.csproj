@@ -50,6 +50,12 @@
     <Compile Include="component\FolderBrowserDialogEx.Designer.cs">
       <DependentUpon>FolderBrowserDialogEx.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\Bodyer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Bodyer.Designer.cs">
+      <DependentUpon>Bodyer.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,10 +63,31 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="browser\IE.cs" />
+    <Compile Include="form\Header.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Header.Designer.cs">
+      <DependentUpon>Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Sidebar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Sidebar.Designer.cs">
+      <DependentUpon>Sidebar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="form\Bodyer.resx">
+      <DependentUpon>Bodyer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Header.resx">
+      <DependentUpon>Header.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\SideBar.resx">
+      <DependentUpon>Sidebar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
