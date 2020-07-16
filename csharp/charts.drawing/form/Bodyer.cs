@@ -20,10 +20,20 @@ namespace charts.drawing.form {
             this.browser.ScrollBarsEnabled = true;
             this.browser.ScriptErrorsSuppressed = false;
             this.Controls.Add(this.browser);
-            this.browser.ProgressChanged += new WebBrowserProgressChangedEventHandler(browser_ProgressChanged);
+            this.browser.ProgressChanged += new WebBrowserProgressChangedEventHandler(this.browser_ProgressChanged);
         }
 
+        public event ProgressChangedEventHandler ProgressChanged;
+        public delegate void ProgressChangedEventHandler(long CurrentProgress, long MaximumProgress);
+
         private void browser_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e) {
+            if (this.ProgressChanged != null) {
+                this.ProgressChanged(e.CurrentProgress, e.MaximumProgress);
+            }
+        }
+
+        public void browser_Navigate(String url) {
+            this.browser.Navigate(url);
         }
     }
 }

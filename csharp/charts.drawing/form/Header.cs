@@ -6,5 +6,9 @@ namespace charts.drawing.form {
         public Header() {
             InitializeComponent();
         }
+
+        public String WebSiteUrl() {
+            return this.tbxWebSiteUrl.Text;
+        }
     }
 }

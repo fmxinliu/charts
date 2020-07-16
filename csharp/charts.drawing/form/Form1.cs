@@ -8,7 +8,7 @@ namespace charts.drawing.form {
             this.InitSize();
         }
 
-        // 在窗体显示前，设置位置
+        /// 请在窗体显示前设置
         private void InitSize() {
             // 取得当前的屏幕除任务栏外的工作域大小
             this.Width = SystemInformation.WorkingArea.Width;
@@ -22,6 +22,7 @@ namespace charts.drawing.form {
             this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.StartPosition = FormStartPosition.CenterScreen;
         }
+
         private void Form1_Load(object sender, EventArgs e) {
             this.InitUi();
             this.InitStatusBar();
@@ -31,12 +32,20 @@ namespace charts.drawing.form {
         private Bodyer bodyer;
         private Sidebar sidebar;
         private void InitUi() {
-            header = new Header();
-            bodyer = new Bodyer();
-            sidebar = new Sidebar();
+            this.header = new Header();
+            this.bodyer = new Bodyer();
+            this.sidebar = new Sidebar();
+
             this.AddSubForm(header, pnlHeader);
             this.AddSubForm(bodyer, pnlBodyer);
             this.AddSubForm(sidebar, pnlSidebar);
+
+            this.sidebar.Navigate += new Sidebar.NavigateEventHandler(this.Website_Navigate);
+            this.bodyer.ProgressChanged += new Bodyer.ProgressChangedEventHandler(this.bodyer_ProgressChanged);
+
+            this.toolStripProgressBar1.Visible = false;
+            this.toolStripStatusLabel1.Visible = false;
+            this.toolStripStatusLabel2.Text = "根目录：" + Application.StartupPath;
         }
 
         private void AddSubForm(Form form, Panel panel) {
@@ -64,6 +73,34 @@ namespace charts.drawing.form {
             fbdEx.SelectedPath = @"D:\";
             if (DialogResult.OK == fbdEx.ShowDialog()) {
                 this.toolStripStatusLabel2.Text = "根目录：" + fbdEx.SelectedPath;
+            }
+        }
+
+        private void Website_Navigate() {
+            this.bodyer.browser_Navigate(this.header.WebSiteUrl());
+        }
+
+        private void bodyer_ProgressChanged(long CurrentProgress, long MaximumProgress) {
+            if (CurrentProgress < 0 || MaximumProgress <= 0) {
+                return;
+            }
+
+            this.toolStripProgressBar1.Visible = true;
+            this.toolStripStatusLabel1.Visible = true;
+
+            this.toolStripProgressBar1.Value = (int)CurrentProgress;
+            this.toolStripProgressBar1.Maximum = (int)MaximumProgress;
+            this.toolStripStatusLabel1.Text = CurrentProgress * 100.0f / MaximumProgress + "%";
+            Console.WriteLine(CurrentProgress);
+
+            if (CurrentProgress >= MaximumProgress) {
+                new System.Threading.Thread(delegate() {
+                    System.Threading.Thread.Sleep(1000);
+                    this.Invoke(new MethodInvoker(delegate {
+                        this.toolStripProgressBar1.Visible = false;
+                        this.toolStripStatusLabel1.Visible = false;
+                    }));
+                }).Start();
             }
         }
     }

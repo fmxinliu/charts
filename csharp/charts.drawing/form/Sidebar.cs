@@ -7,8 +7,13 @@ namespace charts.drawing.form {
             InitializeComponent();
         }
 
-        private void btnLoad_Click(object sender, EventArgs e) {
+        public event NavigateEventHandler Navigate;
+        public delegate void NavigateEventHandler();
 
+        private void btnNavigate_Click(object sender, EventArgs e) {
+            if (this.Navigate != null) {
+                this.Navigate();
+            }
         }
     }
 }

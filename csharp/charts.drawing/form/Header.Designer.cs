@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.label1 = new System.Windows.Forms.Label();
-            this.tbxWebSite = new System.Windows.Forms.TextBox();
+            this.tbxWebSiteUrl = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -36,22 +36,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "网址：";
             // 
-            // tbxWebSite
+            // tbxWebSiteUrl
             // 
-            this.tbxWebSite.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tbxWebSiteUrl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxWebSite.Location = new System.Drawing.Point(95, 20);
-            this.tbxWebSite.Name = "tbxWebSite";
-            this.tbxWebSite.Size = new System.Drawing.Size(736, 25);
-            this.tbxWebSite.TabIndex = 1;
-            this.tbxWebSite.Text = "http://www.baidu.com";
+            this.tbxWebSiteUrl.Location = new System.Drawing.Point(95, 20);
+            this.tbxWebSiteUrl.Name = "tbxWebSiteUrl";
+            this.tbxWebSiteUrl.Size = new System.Drawing.Size(736, 25);
+            this.tbxWebSiteUrl.TabIndex = 1;
+            this.tbxWebSiteUrl.Text = "http://www.baidu.com";
             // 
             // Header
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 78);
-            this.Controls.Add(this.tbxWebSite);
+            this.Controls.Add(this.tbxWebSiteUrl);
             this.Controls.Add(this.label1);
             this.Name = "Header";
             this.Text = "导航栏";
@@ -63,6 +63,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbxWebSite;
+        private System.Windows.Forms.TextBox tbxWebSiteUrl;
     }
 }

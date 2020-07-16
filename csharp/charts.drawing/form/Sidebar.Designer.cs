@@ -23,25 +23,25 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnNavigate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnLoad
+            // btnNavigate
             // 
-            this.btnLoad.Location = new System.Drawing.Point(44, 31);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(75, 25);
-            this.btnLoad.TabIndex = 2;
-            this.btnLoad.Text = "加载";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            this.btnNavigate.Location = new System.Drawing.Point(44, 31);
+            this.btnNavigate.Name = "btnNavigate";
+            this.btnNavigate.Size = new System.Drawing.Size(75, 25);
+            this.btnNavigate.TabIndex = 2;
+            this.btnNavigate.Text = "转到";
+            this.btnNavigate.UseVisualStyleBackColor = true;
+            this.btnNavigate.Click += new System.EventHandler(this.btnNavigate_Click);
             // 
             // Sidebar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(157, 567);
-            this.Controls.Add(this.btnLoad);
+            this.Controls.Add(this.btnNavigate);
             this.Name = "Sidebar";
             this.Text = "控制栏";
             this.ResumeLayout(false);
@@ -50,6 +50,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button btnNavigate;
     }
 }
