@@ -76,10 +76,6 @@ namespace charts.drawing.form {
             }
         }
 
-        private void Website_Navigate() {
-            this.bodyer.browser_Navigate(this.header.WebSiteUrl());
-        }
-
         private void bodyer_ProgressChanged(long CurrentProgress, long MaximumProgress) {
             if (CurrentProgress < 0 || MaximumProgress <= 0) {
                 return;
@@ -91,7 +87,6 @@ namespace charts.drawing.form {
             this.toolStripProgressBar1.Value = (int)CurrentProgress;
             this.toolStripProgressBar1.Maximum = (int)MaximumProgress;
             this.toolStripStatusLabel1.Text = CurrentProgress * 100.0f / MaximumProgress + "%";
-            Console.WriteLine(CurrentProgress);
 
             if (CurrentProgress >= MaximumProgress) {
                 new System.Threading.Thread(delegate() {
@@ -102,6 +97,14 @@ namespace charts.drawing.form {
                     }));
                 }).Start();
             }
+        }
+
+        private void Website_Navigate() {
+            this.bodyer.browser_Navigate(this.header.WebSiteUrl());
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e) {
+            Environment.Exit(0); // 直接终止进程
         }
     }
 }
