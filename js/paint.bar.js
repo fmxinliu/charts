@@ -133,8 +133,8 @@ var bar = {
 		splitNumber: 5	// Y 轴细分
 	}],
 	grid: {
-		top: 120,
-		bottom: 120
+		top: 150,
+		bottom: 130
 	},
 	title: {
 		text: '常  开  阀  生  产  看  板',
@@ -153,7 +153,7 @@ var bar = {
 			fontWeight: 'bolder',
 			color: 'rgba(255, 0, 0, 1)'
 		},
-		itemGap: 30 // 设置主副标题之间的间距
+		itemGap: 25 // 设置主副标题之间的间距
 	}
 };
 

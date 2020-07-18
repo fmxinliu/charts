@@ -31,15 +31,27 @@ var gauge = {
 			formatter: "{value}%"
 		},
 		title: {
-			show: true,
+			show: false,
 			fontSize: 20,
 			fontStyle: 'normal',
 			fontWeight: 'bolder',
 			color: 'rgba(255, 0, 0, 1)',
-			offsetCenter: ['0', '-130']
+			offsetCenter: ['0', '-160'],
 		},
-		data: [{value: 40, name: '日产量合格率'}]
-	}]
+		data: [{value: 40, name: '%'}]
+	}],
+	title: {
+		text: '日产量合格率',
+		left: "center",
+		top: "top",
+		textStyle: {
+			fontSize: 20,
+			fontStyle: 'normal',
+			fontWeight: 'bolder',
+			color: 'rgba(255, 0, 0, 1)'
+		},
+		padding: 60
+	}
 };
 
 chartGauge.setOption(gauge);

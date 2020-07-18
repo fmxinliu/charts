@@ -59,6 +59,10 @@ var line = {
 	yAxis: {
 		// offset: -10 // y 轴在 x 轴上的偏移
 	},
+	grid: {
+		top: 150,
+		bottom: 130
+	},
 	title: {
 		text: '常开线日产能统计',
 		left: "center",
@@ -68,8 +72,9 @@ var line = {
 			fontStyle: 'normal',
 			fontWeight: 'bolder',
 			color: 'rgba(255, 0, 0, 1)'
-		}
-	},
+		},
+		padding: 60
+	}
 };
 
 chartLine.setOption(line);
