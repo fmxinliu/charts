@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Win32;
 
-namespace charts.drawing {
+namespace charts.drawing.ie {
     public class IE {
         private static readonly Dictionary<Version, Object> versionList = new Dictionary<Version, Object>();
         static IE() {

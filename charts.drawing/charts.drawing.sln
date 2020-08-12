@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "charts.drawing", "charts.drawing\charts.drawing.csproj", "{4FED79B5-B344-45AF-8391-1658DA67A0EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "charts.drawing.ie", "charts.drawing.ie\charts.drawing.ie.csproj", "{4FED79B5-B344-45AF-8391-1658DA67A0EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

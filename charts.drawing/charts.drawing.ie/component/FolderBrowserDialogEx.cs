@@ -4,7 +4,7 @@ using System.Drawing.Design;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace charts.drawing {
+namespace charts.drawing.ie {
     #region FolderBrowserDialogEx
     /// <summary>
     /// Vista 样式的选择文件对话框的基类

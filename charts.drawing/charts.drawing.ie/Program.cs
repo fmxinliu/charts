@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using charts.drawing.form;
+using charts.drawing.ie.form;
 
-namespace charts.drawing {
+namespace charts.drawing.ie {
     static class Program {
         /// <summary>
         /// 应用程序的主入口点。

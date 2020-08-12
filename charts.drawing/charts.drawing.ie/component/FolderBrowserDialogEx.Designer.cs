@@ -1,4 +1,4 @@
-﻿namespace charts.drawing {
+﻿namespace charts.drawing.ie {
     partial class FolderBrowserDialogEx {
         /// <summary>
         /// 必需的设计器变量。

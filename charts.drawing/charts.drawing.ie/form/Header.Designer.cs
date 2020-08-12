@@ -1,4 +1,4 @@
-﻿namespace charts.drawing.form {
+﻿namespace charts.drawing.ie.form {
     partial class Header {
         /// <summary>
         /// Required designer variable.

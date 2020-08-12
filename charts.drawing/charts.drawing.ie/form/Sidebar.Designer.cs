@@ -1,5 +1,5 @@
-﻿namespace charts.drawing.form {
-    partial class Bodyer {
+﻿namespace charts.drawing.ie.form {
+    partial class Sidebar {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -23,20 +23,33 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.btnNavigate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Bodyer
+            // btnNavigate
+            // 
+            this.btnNavigate.Location = new System.Drawing.Point(44, 31);
+            this.btnNavigate.Name = "btnNavigate";
+            this.btnNavigate.Size = new System.Drawing.Size(75, 25);
+            this.btnNavigate.TabIndex = 2;
+            this.btnNavigate.Text = "转到";
+            this.btnNavigate.UseVisualStyleBackColor = true;
+            this.btnNavigate.Click += new System.EventHandler(this.btnNavigate_Click);
+            // 
+            // Sidebar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 561);
-            this.Name = "Bodyer";
-            this.Text = "网页显示";
-            this.Load += new System.EventHandler(this.Bodyer_Load);
+            this.ClientSize = new System.Drawing.Size(157, 567);
+            this.Controls.Add(this.btnNavigate);
+            this.Name = "Sidebar";
+            this.Text = "控制栏";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnNavigate;
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace charts.drawing.form {
+namespace charts.drawing.ie.form {
     public partial class Sidebar : Form {
         public Sidebar() {
             InitializeComponent();
