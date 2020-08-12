@@ -13,12 +13,16 @@ namespace charts.drawing.form {
 
         private WebBrowser browser;
         public void InitBrowser() {
-            IE.SetVersion(IE.Version.IE9);
+            IE.SetVersion(IE.Version.IE9); // ie9以上支持GPU渲染
             this.browser = new WebBrowser();
             this.browser.Dock = DockStyle.Fill;
             this.browser.Url = new Uri(@"http://www.baidu.com");
             this.browser.ScrollBarsEnabled = true;
-            this.browser.ScriptErrorsSuppressed = false;
+#if DEBUG
+            this.browser.ScriptErrorsSuppressed = false; // 显示脚本错误
+#else
+            this.browser.ScriptErrorsSuppressed = true;
+#endif
             this.Controls.Add(this.browser);
             this.browser.ProgressChanged += new WebBrowserProgressChangedEventHandler(this.browser_ProgressChanged);
         }

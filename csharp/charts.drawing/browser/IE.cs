@@ -18,22 +18,35 @@ namespace charts.drawing {
             versionList.Add(Version.IE11Ex, 0x2EDF); // 11001
         }
 
-        public static void SetVersion(Version version) {
+        public static bool SetVersion(Version version) {
             String productName = AppDomain.CurrentDomain.SetupInformation.ApplicationName;
             if (productName == null) {
                 productName = AppDomain.CurrentDomain.FriendlyName; // .NET2.0
             }
 
-            RegistryKey feature_browser_emulation = Registry.CurrentUser.OpenSubKey(
-                @"Software\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION", true);
-            if (feature_browser_emulation != null) {
-                feature_browser_emulation.SetValue(
-                    productName,
-                    versionList.ContainsKey(version) ? versionList[version] : "",
-                    RegistryValueKind.DWord);
-                feature_browser_emulation.Close();
-                //feature_browser_emulation.Dispose();
+            bool success = false;
+            RegistryKey feature_browser_emulation = null;
+            try {
+                feature_browser_emulation = Registry.CurrentUser.CreateSubKey(
+                    @"Software\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION");
+                if (feature_browser_emulation != null) {
+                    if (!versionList[version].Equals(feature_browser_emulation.GetValue(productName))) {
+                        feature_browser_emulation.SetValue(productName, versionList[version], RegistryValueKind.DWord);
+                    }
+                }
             }
+            catch {
+                success = false;
+            }
+            finally {
+                if (feature_browser_emulation != null) {
+                    success = versionList[version].Equals(feature_browser_emulation.GetValue(productName));
+                    feature_browser_emulation.Close();
+                    feature_browser_emulation.Dispose();
+                }
+            }
+
+            return success;
         }
 
         public enum Version {
