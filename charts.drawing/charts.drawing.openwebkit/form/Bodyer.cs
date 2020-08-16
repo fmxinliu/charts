@@ -39,6 +39,7 @@ namespace charts.drawing.openwebkit.form {
 
         private void browser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e) {
             this.browser.GetScriptManager.ScriptObject = this;
+            charts.drawing.webkit.memory.Utils.FlushMemory();
         }
 
         private void browser_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e) {

@@ -75,6 +75,8 @@
     <Compile Include="form\Sidebar.Designer.cs">
       <DependentUpon>Sidebar.cs</DependentUpon>
     </Compile>
+    <Compile Include="memory\NativeMethods.cs" />
+    <Compile Include="memory\Utils.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="form\Bodyer.resx">
