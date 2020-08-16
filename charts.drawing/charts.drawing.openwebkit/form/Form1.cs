@@ -107,5 +107,9 @@ namespace charts.drawing.openwebkit.form {
             this.bodyer.exit();  // 退出浏览器
             Environment.Exit(0); // 直接终止进程
         }
+
+        public void Exit() {
+            this.Form1_FormClosing(null, null);
+        }
     }
 }
