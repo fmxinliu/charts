@@ -86,7 +86,7 @@ namespace charts.drawing.openwebkit.form {
 
             this.toolStripProgressBar1.Value = (int)CurrentProgress;
             this.toolStripProgressBar1.Maximum = (int)MaximumProgress;
-            this.toolStripStatusLabel1.Text = CurrentProgress * 100.0f / MaximumProgress + "%";
+            this.toolStripStatusLabel1.Text = (CurrentProgress * 100.0f / MaximumProgress).ToString("f0") + "%";
 
             if (CurrentProgress >= MaximumProgress) {
                 new System.Threading.Thread(delegate() {
@@ -110,6 +110,17 @@ namespace charts.drawing.openwebkit.form {
 
         public void Exit() {
             this.Form1_FormClosing(null, null);
+        }
+
+        /// <summary>
+        /// 控件全部加载后一次显示
+        /// </summary>
+        protected CreateParams CreateParams {
+            get {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
         }
     }
 }
