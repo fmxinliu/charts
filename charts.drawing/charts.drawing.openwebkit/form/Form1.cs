@@ -77,6 +77,10 @@ namespace charts.drawing.openwebkit.form {
         }
 
         private void bodyer_ProgressChanged(long CurrentProgress, long MaximumProgress) {
+            if (this.InvokeRequired) {
+                this.Invoke(new Bodyer.ProgressChangedEventHandler(bodyer_ProgressChanged), CurrentProgress, MaximumProgress);
+                return;
+            }
             if (CurrentProgress < 0 || MaximumProgress <= 0) {
                 return;
             }
@@ -115,7 +119,7 @@ namespace charts.drawing.openwebkit.form {
         /// <summary>
         /// 控件全部加载后一次显示
         /// </summary>
-        protected CreateParams CreateParams {
+        protected override CreateParams CreateParams {
             get {
                 CreateParams cp = base.CreateParams;
                 cp.ExStyle |= 0x02000000;
